@@ -1,0 +1,340 @@
+<html>
+<head>
+  <script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+  <style type="text/css">
+    #theTest {
+      filter:alpha(opacity=0);
+      -moz-opacity:0;
+      opacity:0;
+    }
+    .questionContainer
+    {
+      border: 1px solid #000000;
+    }
+    .questionContainer ul
+    {
+
+    }
+    .questionContainer li
+    {
+      padding: 14px;
+    }
+    .invisibleQuestion
+    {
+      display: none;
+    }
+    #question3 {
+      color:blue;
+    }
+    #question4 > table {
+       border: 1px solid black;
+    }
+    #question4 > table > tbody > tr > td {
+      width: 45px;
+    }
+    #middlecell {
+      background-color: red;
+    }
+    #question5 {
+      margin-top: 15px;
+      background-image: url("http://static1.sw-cdn.net/rrstatic/img/portal/press/sw-logo-color.png");
+    }
+    .bold {
+      font-weight: bold;
+    }
+    .dark-gray {
+      color: #383838;
+    }
+    .blue {
+      color:blue;
+    }
+    .display-inline {
+      display:inline;
+    }
+    .display-none {
+      display:none;
+    }
+    #box {
+      width: 500px;
+      height: 275px;
+      top: 50%;
+      left: 50%;
+      margin-top: -137px;
+      margin-left: -250px;
+      z-index: 1;
+      position: fixed;
+      background-color:#F0EADA;
+      color:green;
+      filter:alpha(opacity=50);
+      -moz-opacity:0.5;
+      opacity:0.5;
+      border: 3px solid black;
+    }
+    #closebox {
+      width: 100%;
+      text-align: right;
+    }
+    code { 
+      font-family: monospace;
+    }
+  </style>
+  <script type="text/javascript">
+    // Q: Describe what these functions do using line comments
+    function alertValue(value)
+    {
+      window.alert(value); //creates a popup using the data in value
+    }
+
+    function beginTheTest() {
+      // var introduction = document.getElementById("introduction"); // creates a variable for the introduction
+      // var theTest = document.getElementById("theTest"); // creates a variable for the test
+
+      // introduction.style.display = "none"; // hides the introduction
+      // theTest.style.display = "block"; // shows the test
+
+      document.getElementById("theTest").style.display = "block";
+
+      YUI().use('transition', 'node-event-delegate', 'cssbutton', function(Y) {
+        Y.one('#introduction').transition({
+          duration: 0.75,
+          easing: 'ease-out',
+          height: 0,
+          opacity: {
+            delay: 0,
+            duration: 0.75,
+            value: 0
+          }
+        }, function() {
+          this.remove();
+          Y.one('#theTest').transition({
+            duration: 2.25,
+            easing: 'ease-out',
+            opacity: {
+              delay: 0.25,
+              duration: 2,
+              value: 100
+            }
+          });
+        });
+
+      });
+    }
+
+    function closeTheBox() {
+      document.getElementById("box").style.display = "none"; // hides the box
+    }
+  </script>
+  <title>Shapeways.com HTML Test</title>
+</head>
+<body>
+  <div id="introduction" class="dark-gray">
+    <h1>
+      Shapeways.com HTML Test
+    </h1>
+    <h2>
+      Instructions
+    </h2>
+    <p class="instructionContent">
+      Using the text-editor of your choice, make changes to this HTML document as instructed in the questions below.<br>
+      Each question will be marked with <strong>Q</strong>.<br>
+      Please modify this HTML with your answers (keep all CSS and Javascript in this file).
+      <br><br>
+      Save your test as [yourName]-test.html<br><br>
+      <a href="javascript:void(0);" onclick="beginTheTest()">Click here to begin the test</a>
+    </p>
+  </div>
+  <style type="text/css">
+    .invisibleQuestion
+    {
+      filter:alpha(opacity=40);
+      -moz-opacity:0.4;
+      opacity:0.4;
+    }
+  </style>
+  <div id="theTest" class="display-none">
+    <h2>
+    Questions
+    </h2>
+    <div id="questions" class="questionContainer">
+      <ul>
+        <li id="question1" class="question"><strong>Q:</strong>
+        Add this question to the unordered list shown below.
+        </li>
+        <li id="question2" style="color:blue;" class="blue"><strong>Q:</strong>
+        Make this question blue using an inline style.
+        </li>
+        <li id="question3" ><strong>Q:</strong>
+        Make sure this question has a unique id.
+        Make this question blue using an external id selector.
+        </li>
+        <li id="question4"><strong>Q:</strong>
+        <h3 class="display-inline"> Feature Question </h3><br>
+        Add a table inside this list item.<br>
+        &mdash;
+        Make 5 rows and 3 columns.<br>
+        &mdash;
+        Give the cells a width of 45px.<br>
+        &mdash;
+        Give the table a border.<br>
+        &mdash;
+        Give the middle cell a red background.<br>
+        <table>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>    
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>    
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td id="middlecell">&nbsp;</td>    
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>    
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>    
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+        </li>
+        <li id="question5"><strong>Q:</strong>
+        Create a link to the URL http://www.shapeways.com/jobs and make the link text &quot;Jobs @ Shapeways&quot;.
+        Give this question a top margin of 15px, and a background image from the internet.<br /><a href="http://www.shapeways.com/jobs">Jobs @ Shapeways</a>
+        </li>
+        <li id="question6"><strong>Q:</strong>
+          <h3 class="display-inline"> Feature Question </h3><br>
+          Create a button below this sentence.<br>
+          <button onclick="alert('I\'ve done it!');">Click me</button><br />
+          When the button is clicked, make an alert box appear that says &quot;I&#39;ve done it!&quot;<br>
+        </li>
+        <li id="question7" class="bold"><strong>Q:</strong>
+          Make this question bold using css.  Use an external class selector to apply the style.
+        </li>
+        <li id="question8"><strong>Q:</strong>
+          Make all elements in the Instructions section dark gray (text-color #383838;) using a single css class selector.
+        </li>
+        <li id="question9"><strong>Q:</strong>
+        <span>
+          Make this question visible.
+        </span>
+        </li>
+        <li id="question10"><strong>Q:</strong>
+        <span>
+          Describe the differences between the IE6, IE7, and W3C box models.
+        </span>
+        <br />
+        <span>Measurements in the W3C model only include the content in the box, while the Internet Explorer box model includes the measurement of the entire box.</span>
+        </li>
+        <li id="question11"><strong>Q:</strong>
+        <span>
+          Extract all inline styles in this test to external class selectors.
+        </span>
+        </li>
+        <li id="question12"><strong>Q:</strong>
+        <h3 class="display-inline"> Adventure Question </h3>
+        <ul>
+          <li>
+            Add a semi-transparent box which is centered on the screen.
+          </li>
+          <li>
+            Give the box a 3px black border.
+          </li>
+          <li>
+            Make the background of the box a light-beige.
+          </li>
+          <li>
+            Make the box 500px wide and 257px tall.
+          </li>
+          <li>
+            Include a paragraph of green sample text in the box.
+          </li>
+          <li>
+            <strong>BONUS:</strong>
+            Have a link in the top right corner which closes the box.
+          </li>
+          </ul>
+        </li>
+        <li id="question13"><strong>Q:</strong>
+        <h3 class="display-inline"> Adventure Question </h3><br>
+          Change the functionality of the &quot;begin the test&quot; link:
+          <ul>
+            <li>
+              use the <strong>YUI javascript library</strong> to animate the introduction box closing.
+            </li>
+            <li>
+              use the <strong>YUI javascript library</strong> to fade the test box in.
+            </li>
+          </ul>
+        </li>
+        <li id="question14"><strong>Q:</strong>
+        <h3 class="display-inline"> Feature Question </h3><br>
+        <ol>
+        <li> Show how to include a variable in a page using PHP<br /><code>$var = 1;<br />
+            include 'file.php';</code></li>
+        <li> Show how to loop over a collection of elements in PHP<br /> 
+            <code>$array = array(1 => "a", "2" => "b", 3  => "c", "four" => 4);<br /> 
+                foreach ($array as $key => $value) { <br>
+                  &nbsp;&nbsp;echo $key . " => " . $value . "\n";<br />
+                }</code></li>
+        <li> Show an IF/ELSEIF/ELSE conditional in PHP<br /><code>
+                $var = 1;<br />
+                if ($var == 1) {<br />
+                  &nbsp;&nbsp;echo '$var is 1';<br />
+                } elseif ($var > 0) {<br />
+                  &nbsp;&nbsp;echo '$var is greater than 0';<br />
+                } else {<br />
+                  &nbsp;&nbsp;echo '$var is less than or equal to 0';<br />
+                }
+            </code></li>
+        <li> Show three ways to include content from another file in PHP<br>
+            <code>
+            include 'file.php';<br><br>
+            require 'file.php';<br><br>
+            $string = get_include_contents('file.php');<br>
+            function get_include_contents($filename) {<br>
+                &nbsp;&nbsp;if (is_file($filename)) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;ob_start();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;include $filename;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return ob_get_clean();<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;return false;<br>
+            }<br>
+            </code></li>
+        </ol>
+        </li>
+        <li id="question15"><strong>Q:</strong>
+        <h3 class="display-inline"> Adventure Question </h3><br>
+          Describe the MVC design pattern as it applies to web servers - start from initial HTTP request and end with writing the response.<br />
+          <p>
+          The model (M) handles any database queries. The view (V) is comprised of anything that the user sees. The view can consist of HTML pages that the user interacts with. The controller (C) takes user input and passes data between the view and model.
+          </p>
+        </li>
+        <li id="question16"><strong>Q:</strong>
+        <h3 class="display-inline"> Feature Question </h3><br>
+          Describe the pros and cons of version control. <br />
+          <p>
+          Version control offers a system to keep track of file changes. Some of the pros of version control are the ability to keep track of file changes, keep track of who changes a file, reverting back to a previous version of a file, and being able to see the history of a project. There are also a couple problems to version control: it requires a system to keep track of changes, keeping track of a lot of small changes can add additional time to the process, and learning a version control system can have a steep learning curve.
+          </p>
+        </li>
+      </ul>
+    </div>
+      <div id="box"><div id="closebox" onclick="closeTheBox();">close</div><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p></div>
+  </div>
+  <style type="text/css">
+    .invisibleQuestion
+    {
+      color: #FFFFFF;
+    }
+  </style>
+
+</body>
+</html>
